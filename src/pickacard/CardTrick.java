@@ -14,7 +14,7 @@ public class CardTrick {
 
     public static void main(String[] args) {
         
-        Scanner input = new Scanner(System.in);
+//        Scanner input = new Scanner(System.in);
         Random random = new Random();
         
         Card[] magicHand = new Card[7];
@@ -48,7 +48,7 @@ public class CardTrick {
              
         }
         
-        System.out.println("\n" + "I'm sorry your card is not in your deck of cards");
+        System.out.println("\n" + "I'm sorry your lucky card is not in the deck of cards");
 
     }
 
