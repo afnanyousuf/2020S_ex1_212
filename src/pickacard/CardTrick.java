@@ -49,6 +49,10 @@ public class CardTrick { // Start of CardTrick class
         
         // Displaying user's choice
         System.out.println("You have guessed " + value + " of " + suit);
+            
+        Card luckyCard = new Card();
+        luckyCard.setValue(7);
+        luckyCard.setSuit(Card.SUITS[0]);
         
         // Variable that will hold how many times the user's guess has appeared in the 7 cards
         int counter = 0;
