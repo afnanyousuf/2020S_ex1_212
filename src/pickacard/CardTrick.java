@@ -21,7 +21,9 @@ public class CardTrick {
         
         Card luckyCard = new Card();
         luckyCard.setValue(1);
-        luclyCard.setSuit(Card.SUITS[0]);
+        luckyCard.setSuit(Card.SUITS[0]);
+
+        
         
 
         for (int i = 0; i < magicHand.length; i++) {
@@ -33,6 +35,18 @@ public class CardTrick {
             c.setSuit(Card.SUITS[(int)(Math.random()*4)]);
 
             magicHand[i] = c;
+        }
+
+        //Added search for Lucky Card 
+
+        for(int i = 0; i < magicHand.length; i++){
+            if(luckyCard.getValue() == magicHand[i].getValue()
+                && luckyCard.getSuit().equals(magicHand[i].getSuit())){
+                System.out.println("Your card is card number " + (i+1));
+                break;
+            }else if(i == 6){
+                System.out.println("No Match!");
+            }
         }
 
         //for(Card c:magicHand){
