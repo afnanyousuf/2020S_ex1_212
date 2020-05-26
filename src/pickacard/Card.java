@@ -10,6 +10,8 @@ package pickacard;
  * @author dancye
  * @author Paul Bonenfant
  * @author Moon Hyuk Kang
+ * 
+ * Date: May 26, 2020
  */
 public class Card {
 
