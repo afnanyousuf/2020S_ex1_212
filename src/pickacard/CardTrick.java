@@ -34,21 +34,6 @@ public class CardTrick { // Start of CardTrick class
 //            System.out.println("Suit: " + magicHand[i].getSuit());
             
         } // End of for loop
-        
-        // Asking user for their guess
-        System.out.println("Guess a card");
-        System.out.println("Enter a card value");
-        System.out.println("Ace = 1, Jack =11, Queen =12, King = 13");
-        System.out.print("Value: ");
-        int value = sc.nextInt();
-        
-        System.out.println("Enter a suit");
-        System.out.println("0 for Hearts, 1 for Diamonds, 2 for Spades, 3 for Clubs");
-        System.out.print("Suit: ");
-        String suit = Card.SUITS[sc.nextInt()];
-        
-        // Displaying user's choice
-        System.out.println("You have guessed " + value + " of " + suit);
             
         Card luckyCard = new Card();
         luckyCard.setValue(7);
@@ -58,7 +43,7 @@ public class CardTrick { // Start of CardTrick class
         int counter = 0;
         
         for (int i = 0; i < magicHand.length; i++) { // Start of for loop
-            if (value == magicHand[i].getValue() && suit.equals(magicHand[i].getSuit())) {
+            if (luckyCard.getValue() == magicHand[i].getValue() && luckyCard.getSuit().equals(magicHand[i].getSuit())) {
                 counter++;
             }
         } // End of for loop
