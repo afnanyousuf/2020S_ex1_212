@@ -7,6 +7,7 @@ package pickacard;
  * @author dancye
  * @author Paul Bonenfant
  * @author Steven Tedesco - May 26th, 2020
+ * updated Comment name - May 26th, 2020
  */
 
 import java.util.Scanner;
