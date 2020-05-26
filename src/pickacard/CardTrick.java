@@ -30,9 +30,14 @@ public class CardTrick {
             magicHand[i] = c;
         }
 
-        System.out.println("\n" + "Choose a Card value and a suit:");
-        int cardValue = input.nextInt();
-        String cardSuit = input.next();
+//         System.out.println("\n" + "Choose a Card value and a suit:");
+       
+        Card luckyCard = new Card();
+        luckyCard.setValue(3);
+        luckyCard.setSuit("Hearts");
+        
+        int cardValue = luckyCard.getValue();
+        String cardSuit = luckyCard.getSuit();
         
         for(int i = 0; i < magicHand.length; i++){
             
