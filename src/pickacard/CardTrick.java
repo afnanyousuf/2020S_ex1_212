@@ -32,6 +32,10 @@ public class CardTrick
         }
         */
         
+        Card luckyCard = new Card();
+        luckyCard.setValue = 13;
+        luckyCard.setSuit = Card.SUITS["Spades"];
+        
         Scanner sc = new Scanner(System.in);
         
         System.out.println("Please pick a card value from 1-13");
