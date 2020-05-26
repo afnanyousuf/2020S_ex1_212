@@ -31,9 +31,9 @@ public class CardTrick {
         System.out.println("Enter a Number (1-13)");
         int value = in.nextInt();*/
         
-        Card luckyCard = newCard();
+        Card luckyCard = new Card();
         luckyCard.setValue(7);
-        luckyCard.setSuit(Card.SUITS[1])
+        luckyCard.setSuit(Card.SUITS[1]);
         String suit = luckyCard.getSuit();
         int value = luckyCard.getValue();
         
@@ -43,9 +43,15 @@ public class CardTrick {
                     System.out.println("Card is in the Magic Hand.");
                     break;
                 }
+                else if (magicHand.length-1 == j){
+                    System.out.println("Card is not in Magic Hand");
+                    break;
+                }
+                else{}
             }
             else if (magicHand.length-1 == j){
                 System.out.println("Card is not in Magic Hand");
+                break;
             }
             else{}
             
