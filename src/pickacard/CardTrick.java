@@ -30,12 +30,10 @@ public class CardTrick { // Start of CardTrick class
             // Assigning card object 
             magicHand[i] = c;
             
-        } // End of for loop
-        
-//        for (int i = 0; i < magicHand.length; i++) {
 //            System.out.println("Value: " + magicHand[i].getValue());
 //            System.out.println("Suit: " + magicHand[i].getSuit());
-//        }
+            
+        } // End of for loop
         
         // Asking user for their guess
         System.out.println("Guess a card");
