@@ -8,6 +8,8 @@ import java.util.Scanner;
  * @author dancye
  * @author Paul Bonenfant
  * @author Moon Hyuk Kang
+ * 
+ * Date: May 26, 2020
  */
 public class CardTrick { // Start of CardTrick class
     
