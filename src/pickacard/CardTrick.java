@@ -1,4 +1,5 @@
 package pickacard;
+import java.util.Scanner; //Scanner Class tO read Input
 
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects and then asks the user to pick a card and
@@ -6,6 +7,7 @@ package pickacard;
  *
  * @author dancye
  * @author Paul Bonenfant
+ * @author Jason D'Souza
  */
 public class CardTrick {
 
@@ -15,13 +17,34 @@ public class CardTrick {
 
         for (int i = 0; i < magicHand.length; i++) {
             Card c = new Card();
-            //c.setValue(insert call to random number generator here)
-            //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+            
+            c.setValue((int)(Math.random()*13)+1);
+            c.setSuit(Card.SUITS[(int)(Math.random()*4)]);
+            magicHand[i] = c;
+            System.out.printf("%d %s \n", c.getValue(), c.getSuit());
         }
 
-        //insert code to ask the user for Card value and suit, create their card
-        // and search magicHand here
-        //Then report the result here
+        Scanner in =new Scanner(System.in);
+        System.out.println("Enter a suit (clubs, spades, hearts, diamonds)");
+        String suit = in.nextLine();
+        suit = (suit.substring(0, 1).toUpperCase()+suit.substring(1).toLowerCase());
+        System.out.println("Enter a Number (1-13)");
+        int value = in.nextInt();
+        
+        for (int j = 0; j < magicHand.length; j++){
+            if(suit.equals(magicHand[j].getSuit())){
+                if(value==magicHand[j].getValue()){
+                    System.out.println("Card is in the Magic Hand.");
+                    break;
+                }
+            }
+            else if (magicHand.length-1 == j){
+                System.out.println("Card is not in Magic Hand");
+            }
+            else{}
+            
+        }
+        
     }
 
 }
