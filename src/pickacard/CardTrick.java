@@ -33,26 +33,23 @@ public class CardTrick
         */
         
         Card luckyCard = new Card();
-        luckyCard.setValue = 13;
-        luckyCard.setSuit = Card.SUITS["Spades"];
         
-        Scanner sc = new Scanner(System.in);
+        luckyCard.setValue(13);
+        luckyCard.setSuit(Card.SUITS[3]);
         
-        System.out.println("Please pick a card value from 1-13");
-        int cardValue = sc.nextInt();
-        
-        System.out.println("Please choose a suit 0=Hearts, 1=Diamonds, 2=Spades, 3=Clubs");
-        String cardSuit = Card.SUITS[sc.nextInt()];
-        
-        System.out.println(cardValue + " " + cardSuit);
+        boolean tf = false;
         
         for (int i = 0; i < magicHand.length; i++)
         {
-            if (cardValue != magicHand[i].getValue() || !cardSuit.equals(magicHand[i].getSuit())) 
+            if (luckyCard.getValue() == magicHand[i].getValue() && luckyCard.getSuit() == magicHand[i].getSuit())
             {
-                continue;
+                tf = true;
+                System.out.println("You got the lucky card");  
             }
-                System.out.println("You Did It!");
         }
+        if (tf == false)
+            {
+                System.out.println("Please try again");
+            }
     }
 }
