@@ -43,25 +43,31 @@ public class CardTrick {
         System.out.print("Enter a card suit between (0-3)? ");
         int userSuit = input.nextInt();
         String userSuitAsString = getSuitAsString(userSuit);
-        
-        
 
         // Create user card
         Card userCard = new Card(userValue, userSuitAsString);
         
-        //userCard.setValue(userValue);
-      //  userCard.setSuit(userCard.getSuitAsString(userSuit));
+        //Display the user card
         System.out.println("\nThe user entered: " + userCard);
 
-        // Search the card in the Magic Hand
+        // Search the user card in the Magic Hand
         boolean isFound = searchMagicHand(magicHand, userCard);
 
         //Display the result
         display(isFound);
         
+         System.out.println("*********************************");
         //Create luckyCard
+         Card luckyCard = new Card(13, 2);
         
-
+        //Display the lucky card
+         System.out.println("\nThe lucky Card: " +luckyCard);
+        
+        // Search the lucky card in the Magic Hand
+         isFound = searchMagicHand(magicHand, luckyCard);
+         
+        //Display the result
+        display(isFound);
     }
 
     // Convert the suit value to the equivalent suit String
@@ -80,8 +86,7 @@ public class CardTrick {
         }
     }
 
-    // search magicHand here
-    //Then report the result here
+    // search the card in magicHand 
     public static boolean searchMagicHand(Card[] magicHand, Card findCard) {
         for (int i = 0; i < magicHand.length; i++) {
 
@@ -92,6 +97,7 @@ public class CardTrick {
         return false;
     }
 
+    //Display the result
     public static void display(boolean isFound) {
         if (isFound) {
             System.out.println("Yess, your card is in the magic Hand!!");
