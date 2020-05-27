@@ -32,12 +32,10 @@ public class CardTrick {
         // /display the MagicHand
         System.out.println("The Magic Hand contains: ");
         for (int i = 0; i < magicHand.length; i++) {
-            System.out.println((i+1) +"- " + magicHand[i]);
+            System.out.println((i + 1) + "- " + magicHand[i]);
         }
 
-        //insert code to ask the user for Card value and suit, create their card
-        // and search magicHand here
-        //Then report the result here
+        //Ask the user for Card value and suit, create their card
         Scanner input = new Scanner(System.in);
         System.out.print("\nEnter a card Value between (1-13)? ");
         int userValue = input.nextInt();
@@ -47,30 +45,36 @@ public class CardTrick {
 
         // Create user card
         Card userCard = new Card();
-       // System.out.println(userCard);
-
         userCard.setValue(userValue);
         userCard.setSuit(userCard.getSuitAsString(userSuit));
+        System.out.println("\nThe user entered: " + userCard);
 
-        System.out.println("\nThe user entered: "  + userCard);
-        
-        // search magicHand here
-        //Then report the result here
+        // Search the card in the Magic Hand
+        boolean isFound = searchMagicHand(magicHand, userCard);
+
+        //Display the result
+        display(isFound);
+
+    }
+
+    // search magicHand here
+    //Then report the result here
+    public static boolean searchMagicHand(Card[] magicHand, Card findCard) {
         for (int i = 0; i < magicHand.length; i++) {
 
-            if (magicHand[i].equals(userCard)) {
-                System.out.println("Yess, your card is in the magic Hand!");
-                break;
+            if (magicHand[i].equals(findCard)) {
+                return true;
             }
-
-            if (i == magicHand.length - 1) {
-                System.out.println("Sorry, your card is not in the magic Hand");
-            }
-
         }
+        return false;
+    }
 
-       
-
+    public static void display(boolean isFound) {
+        if (isFound) {
+            System.out.println("Yess, your card is in the magic Hand!!");
+        } else {
+            System.out.println("Sorry, your card is not in the magic Hand");
+        }
     }
 
 }
