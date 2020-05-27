@@ -30,6 +30,10 @@ public class CardTrick
 //         System.out.println("Suit: " + magicHand[i].getSuit());
 //      }
 
+        Card luckyCard = new Card();
+        luckyCard.setValue = 13;
+        luckyCard.setSuit = Card.SUITS["Spades"];
+      
       //insert code to ask the user for Card value and suit, create their card
       Scanner scan = new Scanner(System.in);
       System.out.print("Enter your card value(1-13): ");
