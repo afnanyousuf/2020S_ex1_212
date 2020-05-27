@@ -38,12 +38,27 @@ public class CardTrick {
         Card luckyCard = new Card();
         luckyCard.setSuit("Spades");
         luckyCard.setValue(2);
+        
+        // Create Scanner Object to get input from user.
+        Scanner input = new Scanner(System.in);
 
-        // Compare the lucky card with the hand and decide if there is a match.
+        /*
+        Prompt the user to choose a card. Set suit and value for the user's 
+        card based on user's input. 
+         */
+        System.out.println("Pick a card, any card!\n"
+                + "First pick a suit (Hearts, Diamonds, Spades, Clubs): ");
+        String userSuit = input.nextLine();
+
+        System.out.println("Now, choose a value for the card "
+                + "(whole number between 1 and 13): ");
+        int userValue = Integer.parseInt(input.nextLine());
+
+        // Compare the user's card with the hand and decide if there is a match.
         boolean match = false;
         for (Card card : magicHand) {
-            if (luckyCard.getSuit().equals(card.getSuit()) 
-                && luckyCard.getValue() == card.getValue()) {
+            if (userSuit.equalsIgnoreCase(card.getSuit())
+                    && userValue == card.getValue()) {
                 match = true;
             }
         }
