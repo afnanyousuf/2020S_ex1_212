@@ -35,9 +35,6 @@ public class CardTrick {
             //System.out.println(c.getValue() + " of " + c.getSuit());
         }
         
-        //create scanner object to grab user input
-        Scanner input = new Scanner(System.in);
-        
         Card luckyCard = new Card();
         luckyCard.setValue(4);
         luckyCard.setSuit(Card.SUITS[0]);
