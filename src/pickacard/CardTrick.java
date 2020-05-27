@@ -16,8 +16,6 @@ public class CardTrick {
     public static void main(String[] args) {
 
         Card[] magicHand = new Card[7];
-        //initial user's choice of card
-        Card choice = new Card();
         //Set my lucky card
         Card luckyCard = new Card();
         luckyCard.setSuit("Hearts");
@@ -48,55 +46,13 @@ public class CardTrick {
 //            System.out.println(magicHand[i].getSuit() + magicHand[i].getValue() + "\t");
 //        }
 
-        //insert code to ask the user for Card value and suit, create their card
-        System.out.println("You will be asked for one card.");
-        System.out.println("Please choose the suit:");
-        
-        //Judge whether the suit entered by the user is valid
-        do {
-            for (int i = 0; i < SUITS.length; i++) {
-                System.out.print(SUITS[i] + "\t");
-            }
-            System.out.println("");
-            System.out.println("------------------------");
-            String input = new Scanner(System.in).nextLine();
-            // and search magicHand here
-            for (int i = 0; i < SUITS.length; i++) {
-                if (input.trim().equals(SUITS[i])) {
-                    isValid = true;
-                    choice.setSuit(input);
-                    break;
-                }
-            }
-            if (!isValid) {
-                System.out.println("You enter wrong suit, please enter again.");
-            }
-        } while (!isValid);
-        
-//        Judge whether the value entered by the user is valid
-        isValid = false;
-        do {
-            System.out.println("Please choose the value between 1 to 13:");
-            int input = -1;
-            try {
-                input = new Scanner(System.in).nextInt();
-
-            } catch (Exception e) {
-                System.out.println("The number you entered is not a number.");
-                continue;
-            }
-            if (input <= 13 && input >= 1) {
-                isValid = true;
-                choice.setValue(input);
-            } else {
-                System.out.println("The number you entered is an invaild vlaue. Please re-enter:");
-            }
-        } while (!isValid);
-
         //Then report the result here
-        isValid = false;
+        
+        //Show my lucky card
+        System.out.println("My lucky card is "+luckyCard.getSuit()+luckyCard.getValue());
+        System.out.println("---------------------------");
         for (int i = 0; i < magicHand.length; i++) {
-            if (choice.getSuit().equals(magicHand[i].getSuit()) && choice.getValue() == magicHand[i].getValue()) {
+            if (luckyCard.getSuit().equals(magicHand[i].getSuit()) && luckyCard.getValue() == magicHand[i].getValue()) {
                 System.out.println("Congratulation!!! You got it. The card you chosen exites.");
                 isValid = true;
                 break;
@@ -106,7 +62,7 @@ public class CardTrick {
             System.out.println("Sorry!!! You miss it. The card you chosen don't exites.");
         }
         System.out.println("-----------------------");
-        System.out.println("The cards I have:");
+        System.out.println("The cards we have:");
         for (int i = 0; i < magicHand.length; i++) {
             System.out.print(magicHand[i].getSuit() + magicHand[i].getValue() + "\t");
         }
