@@ -42,11 +42,15 @@ public class CardTrick {
 
         System.out.print("Enter a card suit between (0-3)? ");
         int userSuit = input.nextInt();
+        String userSuitAsString = getSuitAsString(userSuit);
+        
+        
 
         // Create user card
-        Card userCard = new Card();
-        userCard.setValue(userValue);
-        userCard.setSuit(userCard.getSuitAsString(userSuit));
+        Card userCard = new Card(userValue, userSuitAsString);
+        
+        //userCard.setValue(userValue);
+      //  userCard.setSuit(userCard.getSuitAsString(userSuit));
         System.out.println("\nThe user entered: " + userCard);
 
         // Search the card in the Magic Hand
@@ -54,7 +58,26 @@ public class CardTrick {
 
         //Display the result
         display(isFound);
+        
+        //Create luckyCard
+        
 
+    }
+
+    // Convert the suit value to the equivalent suit String
+     public static String getSuitAsString(int userSuit) {
+        switch (userSuit) {
+            case 0:
+                return "Spades";
+            case 1:
+                return "Hearts";
+            case 2:
+                return "Diamonds";
+            case 3:
+                return "Clubs";
+            default:
+                return "Joker";
+        }
     }
 
     // search magicHand here

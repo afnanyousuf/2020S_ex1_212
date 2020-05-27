@@ -10,10 +10,19 @@ package pickacard;
  * @author Hanan Fadel, May 2020
  */
 public class Card {
-
+    
     private String suit; //clubs, spades, diamonds, hearts
     private int value;//1-13
 
+    // Class constructor
+        public Card() {
+        
+    }
+    
+    public Card(int value, String suit) {
+        this.value = value;
+        this.suit= suit;
+    }
     public static final String[] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
 
     /**
@@ -78,21 +87,7 @@ public class Card {
 
     }
 
-    public String getSuitAsString(int userSuit) {
-        switch (userSuit) {
-            case 0:
-                return "Spades";
-            case 1:
-                return "Hearts";
-            case 2:
-                return "Diamonds";
-            case 3:
-                return "Clubs";
-            default:
-                return "Joker";
-        }
-    }
-
+   
     public boolean equals(Card userCard) {
         return this.value == userCard.value && this.suit == userCard.suit;
     }
