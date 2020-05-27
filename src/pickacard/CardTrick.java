@@ -1,7 +1,5 @@
 package pickacard;
 
-import java.util.Scanner;
-
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects and then asks the user to pick a card and
  * searches the array of cards for the match to the user's card. To be used as starting code in ICE 1
@@ -40,24 +38,15 @@ public class CardTrick {
         //create scanner object to grab user input
         Scanner input = new Scanner(System.in);
         
-        Card userCard = new Card();
-        
-        System.out.println("Pick a card:");
-        System.out.println("Ace = 1, Jack = 11, Queen = 12, King = 13");
-        System.out.print("Card Value:");
-        //int value = input.nextInt();
-        userCard.setValue(input.nextInt());
-        
-        System.out.println("Hearts = 0, Diamonds = 1, Spades = 2, Clubs = 3");
-        System.out.print("Card Suit:");
-        //String suit = Card.SUITS[input.nextInt()];
-        userCard.setSuit(Card.SUITS[input.nextInt()]);
-        
+        Card luckyCard = new Card();
+        luckyCard.setValue(4);
+        luckyCard.setSuit(Card.SUITS[0]);
+     
         boolean found = false;
         //iterate through magicHand and check if the user's card matches and card in the hand
         for (int i = 0; i < magicHand.length; i++) {
-            if (userCard.getValue() == magicHand[i].getValue() && userCard.getSuit().equals(magicHand[i].getSuit())) {
-                System.out.println("Card found in the magic hand!");
+            if (luckyCard.getValue() == magicHand[i].getValue() && luckyCard.getSuit().equals(magicHand[i].getSuit())) {
+                System.out.println("Card was found in the magic hand!");
                 found = true;
                 break;
             }
