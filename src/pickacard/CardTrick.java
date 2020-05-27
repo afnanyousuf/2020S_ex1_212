@@ -47,8 +47,8 @@ public class CardTrick {
         }
 
         // Display the result of the trick
-        String result = match ? "Here is your card!" : "Sorry, your card is not"
-                + " in the hand.";
+        String result = match ? "Here is the lucky card!" : "Sorry, the lucky "
+                + "card is not in the hand.";
         System.out.println(result);
 
     }
