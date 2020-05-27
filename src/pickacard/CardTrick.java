@@ -34,16 +34,40 @@ public class CardTrick {
         for (int i = 0; i < magicHand.length; i++) {
             System.out.println((i + 1) + "- " + magicHand[i]);
         }
-       
+
+        //Ask the user for Card value and suit, create their card
+        Scanner input = new Scanner(System.in);
+        System.out.print("\nEnter a card Value between (1-13)? ");
+        int userValue = input.nextInt();
+
+        System.out.print("Enter a card suit between (0-3)? ");
+        int userSuit = input.nextInt();
+        String userSuitAsString = getSuitAsString(userSuit);
+
+        // Create user card
+        Card userCard = new Card(userValue, userSuitAsString);
+        
+        //Display the user card
+        System.out.println("\nThe user entered: " + userCard);
+
+        // Search the user card in the Magic Hand
+        boolean isFound = searchMagicHand(magicHand, userCard);
+
+        //Display the result
+        display(isFound);
+        
+         System.out.println("*********************************");
         //Create luckyCard
-         Card luckyCard = new Card(13, "Hearts");
+         Card luckyCard = new Card(13, 2);
         
         //Display the lucky card
          System.out.println("\nThe lucky Card: " +luckyCard);
         
-        // Search the lucky card in the Magic Hand and display the result
-         display(searchMagicHand(magicHand, luckyCard));
- 
+        // Search the lucky card in the Magic Hand
+         isFound = searchMagicHand(magicHand, luckyCard);
+         
+        //Display the result
+        display(isFound);
     }
 
     // Convert the suit value to the equivalent suit String
