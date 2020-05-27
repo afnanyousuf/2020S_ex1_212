@@ -18,6 +18,10 @@ public class CardTrick {
         Card[] magicHand = new Card[7];
         //initial user's choice of card
         Card choice = new Card();
+        //Set my lucky card
+        Card luckyCard = new Card();
+        luckyCard.setSuit("Hearts");
+        luckyCard.setValue(13);
         //set variable for condition
         boolean isValid = false;
 
