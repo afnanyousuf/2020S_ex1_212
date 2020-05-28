@@ -15,7 +15,9 @@ public class CardTrick {
         
 
         Card[] magicHand = new Card[7];
-
+        Card luckyCard= new Card();
+        luckyCard.setValue(4);
+        luckyCard.setSuit("Hearts");
         for (int i = 0; i < magicHand.length; i++) {
             Card c = new Card();
             //c.setValue(insert call to random number generator here)
@@ -35,9 +37,9 @@ public class CardTrick {
         for(int j=0;j<magicHand.length;j++)
             
         {
-        if(cardValue==magicHand[j].getValue())
+        if(luckyCard.getValue()==magicHand[j].getValue())
         {
-        if(cardSuit.equalsIgnoreCase(magicHand[j].getSuit()));
+        if(luckyCard.getSuit().equalsIgnoreCase(magicHand[j].getSuit()));
         {
          b=2;
         }
