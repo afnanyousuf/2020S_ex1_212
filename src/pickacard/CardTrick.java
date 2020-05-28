@@ -25,6 +25,10 @@ public class CardTrick {
             c.setValue(randomNum);
             magicHand[i] = c;
           }
+        //Created a hard-coded lucky Card
+        Card luckyCard = new Card();
+        luckyCard.setSuit("Spades");
+        luckyCard.setValue(2);
         
         //Taking user input
         Card userCard = new Card();
