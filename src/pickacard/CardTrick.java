@@ -29,30 +29,39 @@ public class CardTrick
       }
 
       //insert code to ask the user for Card value and suit, create their card
-      Scanner src = new Scanner(System.in);
-      String userSuit;
-      int userValue;
+      //Scanner src = new Scanner(System.in);
+      //String userSuit;
+      //int userValue;
       boolean isMatched = false;
 
-      System.out.println("Enter your card suit: Clubs, Hearts, Diamonds, Spades");
-      userSuit = src.nextLine();
+      //System.out.println("Enter your card suit: Clubs, Hearts, Diamonds, Spades");
+      //userSuit = src.nextLine();
 
-      System.out.println("Enter your card value");
-      userValue = src.nextInt();
+      //System.out.println("Enter your card value");
+      //userValue = src.nextInt();
 
+       //add a (hard-coded) Card Object called luckyCard with a number and suit of your choosing
+      Card luckyCard = new Card();
+      luckyCard.setValue(7);
+      luckyCard.setSuit("Hearts");
+      
       // and search magicHand here
       for (int i = 0; i < magicHand.length; i++) {
-         if (magicHand[i].getSuit() == userSuit && magicHand[i].getValue() == userValue) {
-            isMatched = true;
+         //if (magicHand[i].getSuit() == userSuit && magicHand[i].getValue() == userValue) {
+         //   isMatched = true;
+           if (magicHand[i].getSuit() == luckyCard.getSuit() && magicHand[i].getValue() == luckyCard.getValue()) {
+              isMatched = true;
          }
       }
-
+     
       //Then report the result here
       if (isMatched) {
-         System.out.println("Your card (" + userSuit + " " + userValue + ") is in the Magic Hand!");
+         //System.out.println("Your card (" + userSuit + " " + userValue + ") is in the Magic Hand!");
+           System.out.println("Congratualtions! You Won!!");
       }
       else {
-         System.out.println("Your card (" + userSuit + " " + userValue + ") is not in the Magic Hand!");
+         //System.out.println("Your card (" + userSuit + " " + userValue + ") is not in the Magic Hand!");
+           System.out.println("Sorry, You lost..");
       }
    }
 }
