@@ -30,20 +30,13 @@ public class CardTrick {
         luckyCard.setSuit("Spades");
         luckyCard.setValue(2);
         
-        //Taking user input
-        Card userCard = new Card();
-        System.out.println("Enter a suit: ");
-        userCard.setSuit(input.next());
-        System.out.println("Enter the value: ");
-        userCard.setValue(input.nextInt());
+        String result = "You lose, the lucky card was not in the magic hand";
         
-        String result = "Entered card is not in the magic hand";
-        
-        //Checking if the user entered card is in the magic hand
+        //Checking if the lucky card is in the magic hand
         for (int i = 0; i < 7; i++) {
             Card tempCard = magicHand[i];
-            if(userCard.getSuit().equals(tempCard.getSuit()) && userCard.getValue() == tempCard.getValue())
-                result = "Entered card is in the magic hand";
+            if(luckyCard.getSuit().equals(tempCard.getSuit()) && luckyCard.getValue() == tempCard.getValue())
+                result = "You win,the lucky card was in the magic hand";
         }
         
         //reporting the result of the check
